@@ -21,19 +21,20 @@ import psrock
 import importlib
 importlib.reload(psrock)
 
-import rps_code # These are file names in this folder
+import rps_code, team1 # These are file names in this folder
 # The reload() statement is needed for each team because import 
 # will only compile source code once to create the pyc file and store in memory.
 # Without reload(), changes to the .py file will be ignored unless the pyc 
 # file is deleted and the kernel restarted. 
 
 importlib.reload(rps_code)
+importlib.reload(team1)
 
 
 # The first argument of round_robin() specifies the number of 
 # rounds to be played by each pair of strategies. 
 # Change the other arguments to use more teams, fewer teams, or different teams
-short_report, long_report = psrock.round_robin(20, rps_code)
+short_report, long_report = psrock.round_robin(20, rps_code, team1)
 
 for team in long_report:
     print('-'*80)
